@@ -1,12 +1,12 @@
 import 'package:nt_crm/conts/constants.dart';
 import 'package:nt_crm/functions/clear_terminal.dart';
 import 'package:nt_crm/functions/validator.dart';
-import 'package:nt_crm/models/student.dart';
+import 'package:nt_crm/models/administrator.dart';
 import 'package:nt_crm/app.dart';
 
-Student editProfile() {
+Administrator editProfileAdministrator() {
   bool isTerminated = false;
-  final int index = repository.students.indexOf(authenticatedUser! as Student);
+  final int index = repository.administrator.indexOf(authenticatedUser! as Administrator);
   do {
     clearTerminal();
     print(AppConstans.editProfileText);
@@ -22,30 +22,27 @@ Student editProfile() {
           break;
         case 1:
           final firstName = validator("Ism");
-          authenticatedUser = (authenticatedUser! as Student).copyWith(firstName: firstName);
+          authenticatedUser = (authenticatedUser! as Administrator).copyWith(firstName: firstName);
           break;
         case 2:
           final lastName = validator("Familiya");
-          authenticatedUser = (authenticatedUser! as Student).copyWith(lastName: lastName);
+          authenticatedUser = (authenticatedUser! as Administrator).copyWith(lastName: lastName);
           break;
         case 3:
           final password = validator("Parol");
-          authenticatedUser = (authenticatedUser! as Student).copyWith(password: password);
+          authenticatedUser = (authenticatedUser! as Administrator).copyWith(password: password);
           break;
         case 4:
           final email = validator("Email");
-          authenticatedUser = (authenticatedUser! as Student).copyWith(email: email);
+          authenticatedUser = (authenticatedUser! as Administrator).copyWith(email: email);
           break;
-        case 5:
-          final course = validator("Kurs");
-          authenticatedUser = (authenticatedUser! as Student).copyWith(course: course);
-          break;
+        
       }
     } else {
       print("Noto'g'ri buyruq kiritdingiz! Iltimos, qayta urinib ko'ring");
     }
   } while (!isTerminated);
   
-  repository.students[index] = authenticatedUser! as Student;
-  return authenticatedUser as Student;
+  repository.administrator[index] = authenticatedUser! as Administrator;
+  return authenticatedUser as Administrator;
 }

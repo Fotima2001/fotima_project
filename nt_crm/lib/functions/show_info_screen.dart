@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:nt_crm/functions/clear_terminal.dart';
 import 'package:nt_crm/functions/edit_profile.dart';
-import 'package:nt_crm/functions/show_menu.dart';
 import 'package:nt_crm/functions/terminate_app.dart';
 import 'package:nt_crm/app.dart';
 

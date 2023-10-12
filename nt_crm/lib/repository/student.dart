@@ -9,6 +9,8 @@ abstract class StudentRepository {
 
   factory StudentRepository() => StudentRepositoryImpl();
 
+  get administrator => null;
+
   Student createStudent({
     required String id,
     required String firstName,
@@ -85,4 +87,8 @@ class StudentRepositoryImpl implements StudentRepository {
     // TODO: implement updateStudent
     throw UnimplementedError();
   }
+  
+  @override
+  // TODO: implement administrator
+  get administrator => throw UnimplementedError();
 }

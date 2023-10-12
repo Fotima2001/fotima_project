@@ -2,14 +2,9 @@ import 'dart:io';
 
 import 'package:nt_crm/functions/clear_terminal.dart';
 import 'package:nt_crm/functions/login.dart';
-import 'package:nt_crm/functions/show_menu.dart';
 import 'package:nt_crm/functions/sign_up.dart';
-import 'package:nt_crm/functions/sign_up_as_student.dart';
-import 'package:nt_crm/functions/sign_up_as_teacher.dart';
 import 'package:nt_crm/functions/terminate_app.dart';
-import 'package:nt_crm/functions/validator.dart';
 import 'package:nt_crm/app.dart';
-import 'package:nt_crm/models/authenticated_user.dart';
 
 void showAuthScreen() {
   String? input = stdin.readLineSync();
