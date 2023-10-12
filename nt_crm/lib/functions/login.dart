@@ -47,7 +47,7 @@ AuthenticatedUser? loginAsUser(int command) {
     } else if (command == 1 || command == 2){
       authenticatedUser = repository.fetchStudent(id, password);
     } else  {
-      authenticatedUser = repository.fetchStudent(id, password);
+      authenticatedUser = repository.fetchAdministrator(id, password);
     }
   } catch (e) {
     print("Foydalanuvchi topilmadi");

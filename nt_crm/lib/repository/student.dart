@@ -1,3 +1,5 @@
+import 'package:nt_crm/models/authenticated_user.dart';
+
 import '../models/student.dart';
 
 // Alt Shif F - formatter
@@ -10,6 +12,8 @@ abstract class StudentRepository {
   factory StudentRepository() => StudentRepositoryImpl();
 
   get administrator => null;
+
+  get teacher => null;
 
   Student createStudent({
     required String id,
@@ -27,6 +31,8 @@ abstract class StudentRepository {
   Student fetchStudent(String id, String password);
 
   List<Student> fetchStudents();
+
+  AuthenticatedUser? fetchAdministrator(String id, String password) {}
 }
 
 class StudentRepositoryImpl implements StudentRepository {
@@ -91,4 +97,14 @@ class StudentRepositoryImpl implements StudentRepository {
   @override
   // TODO: implement administrator
   get administrator => throw UnimplementedError();
+  
+  @override
+  AuthenticatedUser? fetchAdministrator(String id, String password) {
+    // TODO: implement fetchAdministrator
+    throw UnimplementedError();
+  }
+  
+  @override
+  // TODO: implement teacher
+  get teacher => throw UnimplementedError();
 }
