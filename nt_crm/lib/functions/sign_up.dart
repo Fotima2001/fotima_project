@@ -1,6 +1,7 @@
 import 'package:nt_crm/app.dart';
 import 'package:nt_crm/functions/sign_up_as_student.dart';
 import 'package:nt_crm/functions/sign_up_as_teacher.dart';
+import 'package:nt_crm/functions/sign_up_as_administrator.dart';
 import 'package:nt_crm/functions/validator.dart';
 
 void signUp() {
@@ -10,12 +11,13 @@ void signUp() {
 Kim sifatida ro'yxatdan o'tishni istaysiz?
 1. O'qituvchi
 2. Talaba
+3. Administrator
 0. Orqaga
 """);
     var input = validator("Buyruq");
     var option = int.tryParse(input);
     if (option != null) {
-      if (option >= 0 && option <= 2) {
+      if (option >= 0 && option <= 3) {
         switch (option) {
           case 0:
             isTerminated = true;
@@ -26,6 +28,10 @@ Kim sifatida ro'yxatdan o'tishni istaysiz?
           case 2:
             authenticatedUser = signUpAsStudent();
             break;
+          case 3:
+            authenticatedUser = signUpAsAdministrator();
+            break;
+            
         }
       } else {
         print("Bunday buyruq mavjud emas");
